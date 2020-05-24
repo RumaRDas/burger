@@ -8,5 +8,5 @@ USE burgers_db;
         AUTO_INCREMENT PRIMARY KEY,
         burger_name VARCHAR
         (200),
-     devured BOOLEAN
+     devoured BOOLEAN
 );
