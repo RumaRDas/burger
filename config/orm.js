@@ -8,51 +8,23 @@ var connection = require("../config/connection.js");
 
 var orm = {
 
-    sellectAll: function(tableInput, cb) {
-        var queryString = "SELECT * FROM " + tableInput + ";";
-        connection.query(queryString, function(err, result) {
-          if (err) {
-            throw err;
-          }
-          cb(result);
-        });
+    sellectAll:function(table) {
+      var queryString = "SELECT * FROM ??";
+      return connection.query(queryString, [table]);
+    },
+    
+      insertOne: function(table, cols, vals) {
+        var queryString = "INSERT INTO ?? (??) VALUES (?)";
+        return connection.query(queryString, [table, cols, vals]);
       },
-      insertOne: function(table, cols, vals, cb) {
-        var queryString = "INSERT INTO " + table;
-    
-        queryString += " (";
-        queryString += cols.toString();
-        queryString += ") ";
-        queryString += "VALUES (";
-        queryString += printQuestionMarks(vals.length);
-        queryString += ") ";
-    
-        console.log(queryString);
-    
-        connection.query(queryString, vals, function(err, result) {
-          if (err) {
-            throw err;
-          }
-    
-          cb(result);
-        });
+      
+      updateOne:  function(table, objColVals, condition) {
+        var queryString = "UPDATE ?? SET ? WHERE ?";
+        return connection.query(queryString, [table, objColVals, condition])
       },
-      updateOne: function(table, objColVals, condition, cb) {
-        var queryString = "UPDATE " + table;
-    
-        queryString += " SET ";
-        queryString += objToSql(objColVals);
-        queryString += " WHERE ";
-        queryString += condition;
-    
-        console.log(queryString);
-        connection.query(queryString, function(err, result) {
-          if (err) {
-            throw err;
-          }
-    
-          cb(result);
-        });
+      delete:  function(table, condition) {
+        var queryString = "DELETE FROM ?? WHERE ?";
+        return connection.query(queryString, [table, condition]);
       }
 
 }
