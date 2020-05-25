@@ -5,14 +5,12 @@ const burger = require("../models/burger.js");
 let router = express.Router();
 
 router.get("/", function(req, res) {
-    burger.sellectAll(function(data) {
-     let burgerObj = {
-        burgers: data
-      };
-      console.log(burgerObj);
-      res.render("index", burgerObj);
+    burger.sellectAll()
+    .then(burgers =>{
+      console.log(burgers);
+      res.render("index", burgers);
+    });   
     });
-  });
 
   router.post("/api/burgers", function(req, res) {
     console.log(req.body.name);
