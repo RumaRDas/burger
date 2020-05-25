@@ -4,22 +4,22 @@
 var orm = require("../config/orm.js");
 
 let burger = {
-    sellectAll: function() {
-   return orm.sellectAll("burgers")
+  sellectAll: function () {
+    return orm.sellectAll("burgers")
   },
- // The variables cols and vals are arrays.
- insertOne: function(cols, vals) {
-  return  orm.insertOne("burgers", cols, vals)
-  },
-  
-  updateOne: function(objColVals, condition) {
-  return orm.updateOne("burgers", objColVals, condition) 
+  // The variables cols and vals are arrays.
+  insertOne: function (cols, vals) {
+    return orm.insertOne("burgers", cols, vals)
   },
 
-  delete: function(condition){
-    return orm.delete("burgers",condition)
+  updateOne: function (objColVals, condition) {
+    return orm.updateOne("burgers", objColVals, condition)
+  },
+
+  delete: function (condition) {
+    return orm.delete("burgers", condition)
   }
 
-}
+};
 
 module.exports = burger;
