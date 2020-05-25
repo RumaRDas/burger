@@ -1,7 +1,10 @@
+<div class="container">
 <h1>Burgers!</h1>
 
-<h2>Burgers to Eat</h2>
+<div class="row">
 
+<div class="col-6">
+<h2>Burgers to Eat</h2>
 <ul>
   {{#each burgers}}
     {{#unless devoured}}
@@ -9,9 +12,9 @@
     {{/unless}}
   {{/each}}
 </ul>
-
-<h2>Cats that are sleepy!</h2>
-
+</div>
+<div class="col-6">
+<h2>Burgers to Delevered</h2>
 <ul>
   {{#each burgers}}
     {{#if devoured}}
@@ -19,7 +22,9 @@
     {{/if}}
   {{/each}}
 </ul>
-
+</div>
+</div>
+<div class="row">
 <h2>Add a Burger</h2>
 <form class="create-form">
 
@@ -27,7 +32,7 @@
     <label for="newBurger">Berger Name:</label>
     <input type="text" id="newBurger" name="burger_name">
   </div>
-
-
   <button type="submit">Add Burger</button>
 </form>
+</div>
+</div>
