@@ -1,38 +1,66 @@
-<div class="container">
-<h1>Burgers!</h1>
+<main class="container">
+  <div class="jumbotron">
+    <div class="row">
+    <div class="col-md-5 "><img id="burgerPic" src="/assets/img/pic_1.png" alt=""></div>
+    <div class="col-md-6 "><p class="logo">Burgers!</p></div>
+
+    </div>
+  </div>
+  </div>
+
 
 <div class="row">
-
-<div class="col-6">
+<div class="col-md-6">
 <h2>Burgers to Eat</h2>
 <ul>
   {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
+     {{#unless devoured}}
+     <li>
+       <div class="row">
+    	<div class="col-md-6">{{burger_name}}</div>
+         <div class="col-md-6"> <button class="btn btn-success btn-sm change-devour" id="{{id}}">
+		Devour It </button></div>
+       </div>
+          <hr>
+      </li>
     {{/unless}}
   {{/each}}
 </ul>
 </div>
-<div class="col-6">
+<div class="col-md-6">
 <h2>Burgers to Delevered</h2>
 <ul>
-  {{#each burgers}}
+   {{#each burgers}}
     {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
+    <li>
+   <div class="row">
+    	<div class="col-md-6">{{burger_name}}</div>
+         <div class="col-md-6"> <button class="btn btn-danger btn-sm delete-burger " data-id="{{this.id}}">
+	Delete </button></div>
+       </div>
+          <hr>
+      </li>
     {{/if}}
   {{/each}}
 </ul>
 </div>
 </div>
-<div class="row">
-<h2>Add a Burger</h2>
-<form class="create-form">
 
-  <div class="form-group">
-    <label for="newBurger">Berger Name:</label>
-    <input type="text" id="newBurger" name="burger_name">
+<div class="row">
+<div class="col">
+  <h2>Add a Burger</h2>
+</div>
+
+<div class="col-12 ">
+<form class="create-form">
+  <div class="form-group input-group mb-3">
+    <input type="text" id="newBg" class="form-control" name="burger_name" placeholder="Berger Name:">
+ 
+  <div class="input-group-append">
+  <button type="submit" class="btn btn-primary">Add Burger</button>
   </div>
-  <button type="submit">Add Burger</button>
+ </div>
 </form>
 </div>
 </div>
+</main>

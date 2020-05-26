@@ -8,16 +8,15 @@ let burger = {
     return orm.sellectAll("burgers")
   },
   // The variables cols and vals are arrays.
-  insertOne: function (cols, vals) {
-    return orm.insertOne("burgers", cols, vals)
+  insertOne: function(cols, vals) {
+    return orm.insertOne("burgers", cols, vals);
+  },
+  updateOne: (objColVals, condition) => {
+    return orm.updateOne("burgers", objColVals, condition);
   },
 
-  updateOne: function (objColVals, condition) {
-    return orm.updateOne("burgers", objColVals, condition)
-  },
-
-  delete: function (condition) {
-    return orm.delete("burgers", condition)
+  delete: (objColVals, condition) => {
+    return orm.updateOne("burgers", objColVals, condition);
   }
 
 };

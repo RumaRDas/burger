@@ -1,3 +1,58 @@
 body {
-    background-color: gold;
+    background-color: rgb(226, 193, 172);
+}
+
+h2{
+    text-align: center;
+    font-size: 30px;
+    color: rgb(233, 31, 31);
+    text-shadow: black 2px 2px;
+padding-bottom: 10px;
+}
+ul{
+    border: solid 2px rgb(246, 241, 241);
+    border-radius: 3px;
+    background-color: cornsilk;
+    padding: 10px 20px 12px 40px;
+    list-style-type: none;
+}
+li{
+    padding: 2px 2px 2px;
+}
+main {
+    margin: 30px 0 30px 0;
+    padding: 30px;
+    background-color: rgb(248, 212, 94);
+    box-shadow: 0 0 10px grey;
+}
+
+.form-control, .form-control:focus {
+    background-color: rgb(250, 248, 246);
+    color: rgb(197, 106, 46);
+    border: rgb(243, 190, 141);
+}
+
+.form-control::placeholder {
+    color: rgb(197, 106, 46);
+}
+img{
+    width: 250px;
+    height: 150px;
+    padding-left: 30px;
+    float:right;
+}
+.jumbotron{
+	background-color: rgb(247, 227, 54);
+    text-shadow: black 0.1em 0.1em 0.1em;
+    box-shadow: 0 0 10px grey;
+    border-radius: 8px;
+} 
+.logo{
+    color: rgb(228, 20, 20);
+    text-align: left;
+  font-size: 70px;
+  font-weight: bolder;
+}
+.change-devour{
+    text-align: right;
 }

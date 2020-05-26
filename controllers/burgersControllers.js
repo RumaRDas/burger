@@ -1,5 +1,6 @@
 const express = require("express");
 
+// Import the model (burgers.js) to use its database functions.
 const burger = require("../models/burger.js");
 
 let router = express.Router();
@@ -8,22 +9,15 @@ router.get("/", function(req, res) {
     burger.sellectAll()
     .then(burgers =>{
       console.log(burgers);
-      res.render("index", burgers);
-    });   
+      res.render("index", {burgers});
+    });
     });
 
   router.post("/api/burgers", function(req, res) {
-    burger.insertOne(
-      ["burger_name",
-      " devoured "
-    ],[
-        req.body.burger_name,
-        req.body.devoured
-      ])
-    .then(result => {
-      // Send back the ID of the new quote
+    console.log(req.body.burger_name);
+    burger.insertOne("burger_name",req.body.burger_name).then(result =>{
       res.json({ id: result.insertId });
-    });
+    })    
   });
 
   router.put("/api/burgers/:id", function(req, res) {
@@ -42,7 +36,6 @@ router.get("/", function(req, res) {
     });
   });
      
-
   router.delete("api/burgers/:id", function(req,res){
     let condition = {id: req.params.id};
     burger.delete(condition)

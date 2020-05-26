@@ -1,5 +1,6 @@
 // Set up MySQL connection.
 var mysql = require("mysql");
+var util = require("util");
 
 var connection = mysql.createConnection({
   host: "localhost",
@@ -10,7 +11,7 @@ var connection = mysql.createConnection({
 });
 
 // Make connection.
-connection.connect(function(err) {
+connection.connect(function (err) {
   if (err) {
     console.error("error connecting: " + err.stack);
     return;
