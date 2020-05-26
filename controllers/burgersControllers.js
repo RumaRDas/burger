@@ -36,7 +36,7 @@ router.get("/", function(req, res) {
     });
   });
      
-  router.delete("api/burgers/:id", function(req,res){
+  router.delete("/api/burgers/:id", function(req,res){
     let condition = {id: req.params.id};
     burger.delete(condition)
     .then(result => {

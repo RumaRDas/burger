@@ -33,14 +33,14 @@ $(function() {
         console.log("changed burger to");
         // Reload the page to get the updated list
         location.reload();
-      }
-    );
+      });
   });
+  
     $(".delete-burger").on("click", function(event) {
-   // var id = $(this).data("id");
+  //let id = $(this).data("id");
       // Send the DELETE request.
       $.ajax(`/api/burgers/${this.id}`, {
-        type: "DELETE"
+        type: "DELETE",
       }).then(
         function() {
           console.log("deleted burger", id);

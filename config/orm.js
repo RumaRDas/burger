@@ -18,9 +18,9 @@ var orm = {
     return connection.query(queryString, [table, objColVals, condition])
   },
 
-  delete:  function (table, objColVals, condition) {
+  delete:  function(table, condition) {
     var queryString = "DELETE FROM ?? WHERE ?";
-    return connection.query(queryString, [table, objColVals, condition]);
+    return connection.query(queryString, [table, condition]);
   }
 
 }
