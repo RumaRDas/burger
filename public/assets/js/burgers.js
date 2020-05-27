@@ -39,11 +39,12 @@ $(function() {
     $(".delete-burger").on("click", function(event) {
   //let id = $(this).data("id");
       // Send the DELETE request.
+      event.preventDefault();
       $.ajax(`/api/burgers/${this.id}`, {
         type: "DELETE",
       }).then(
         function() {
-          console.log("deleted burger", id);
+          console.log("deleted burger");
           // Reload the page to get the updated list
           location.reload();
         }

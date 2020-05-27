@@ -20,6 +20,7 @@ var orm = {
 
   delete:  function(table, condition) {
     var queryString = "DELETE FROM ?? WHERE ?";
+    console.log( condition);
     return connection.query(queryString, [table, condition]);
   }
 

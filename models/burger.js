@@ -16,7 +16,7 @@ let burger = {
   },
 
   delete: (condition) => {
-    return orm.updateOne("burgers", condition);
+    return orm.delete("burgers", condition);
   }
 
 };
