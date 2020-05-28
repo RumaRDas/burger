@@ -9,3 +9,4 @@ USE burgers_db;
         devoured BOOLEAN DEFAULT false,
         PRIMARY KEY (id)
 );
+
