@@ -4,7 +4,7 @@ var util = require("util");
 
 
 var connection = mysql.createConnection({
-  host: "localhost",
+  host: " musicdb-g4.cykqhanvgs0f.ap-southeast-2.rds.amazonaws.com",
   port: 3306,
   user: "root",
   password: process.env.SECRET_PASSWORD,
