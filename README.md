@@ -22,7 +22,7 @@
             * Route data     
 
 [GitHub Link](https://rumardas.github.io/burger/.)
-[Heroku Link](https://enigmatic-shore-90584.herokuapp.com/ )
+[Heroku Link](https://frozen-stream-15840.herokuapp.com/ )
 
 ## Instalation 
 
